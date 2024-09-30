@@ -33,7 +33,6 @@ public class RemarkCommandTest {
         RemarkCommand remarkCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(editedPerson.getRemark().value));
         String expectedMessage = String.format(RemarkCommand.MESSAGE_ADD_REMARK_SUCCESS, editedPerson);
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
-        
         expectedModel.setPerson(firstPerson, editedPerson);
         assertCommandSuccess(remarkCommand, model, expectedMessage, expectedModel);
     }
@@ -105,5 +104,4 @@ public class RemarkCommandTest {
         // different remark -> returns false
         assertFalse(standardCommand.equals(new RemarkCommand(INDEX_FIRST_PERSON, new Remark(VALID_REMARK_BOB))));
     }
-
 }
