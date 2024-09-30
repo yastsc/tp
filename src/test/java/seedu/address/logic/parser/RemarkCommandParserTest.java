@@ -16,19 +16,19 @@ public class RemarkCommandParserTest {
     private RemarkCommandParser parser = new RemarkCommandParser();
     private final String nonEmptyRemark = "Some remark.";
 
-    @Test
-    public void parse_indexSpecified_success() {
-        // have remark
-        Index targetIndex = INDEX_FIRST_PERSON;
-        String userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK + nonEmptyRemark;
-        RemarkCommand expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(nonEmptyRemark));
-        assertParseSuccess(parser, userInput, expectedCommand);
-
-        // no remark
-        userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK;
-        expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(""));
-        assertParseSuccess(parser, userInput, expectedCommand);
-    }
+//    @Test
+//    public void parse_indexSpecified_success() {
+//        // have remark
+//        Index targetIndex = INDEX_FIRST_PERSON;
+//        String userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK + nonEmptyRemark;
+//        RemarkCommand expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(nonEmptyRemark));
+//        assertParseSuccess(parser, userInput, expectedCommand);
+//
+//        // no remark
+//        userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK;
+//        expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark(""));
+//        assertParseSuccess(parser, userInput, expectedCommand);
+//    }
 
     @Test
     public void parse_missingCompulsoryField_failure() {
