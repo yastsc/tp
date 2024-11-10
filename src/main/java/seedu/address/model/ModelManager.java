@@ -270,7 +270,7 @@ public class ModelManager implements Model {
     public void deleteTagsWithWedding(Wedding weddingToDelete) {
         Set<Person> weddingParticipants = weddingToDelete.getParticipants();
         for (Person participant : weddingParticipants) {
-            participant.getTags().removeIf(tag -> tag.getTagName().equals(weddingToDelete.getWeddingName().toString()));
+            participant.getTags().removeIf(tag -> tag.getTagName().equals(weddingToDelete.getName()));
             Person newPerson = new Person(
                     participant.getName(), participant.getPhone(), participant.getEmail(),
                     participant.getAddress(), participant.getJob(),
